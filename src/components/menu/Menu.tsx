@@ -10,7 +10,7 @@ export const Menu = (props: { menuItems: Array<string> }) => {
 
 				{props.menuItems.map((item, index) => {
 					return <Item key={index}>
-						<Link href="#">{item}</Link>
+						<Button>{item}</Button>
 					</Item>
 				})}
 
@@ -28,12 +28,12 @@ const StyledMenu = styled.nav`
 `
 
 const Item = styled.li`
+`
+
+const Button = styled.button`
 	font-size: 14px;
 	font-weight: 600;
 	text-transform: uppercase;
-`
-
-const Link = styled.a`
 	display: inline-block;
 	padding: 12px 16px;
 	border: 1px solid transparent;

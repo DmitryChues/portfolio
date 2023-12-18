@@ -36,7 +36,7 @@ export const Contacts = () => {
 								<Label htmlFor="2" aria-describedby='2'>Email Address*</Label>
 								<Email type='email' id="2" placeholder="Enter your email address here" aria-placeholder='Enter your email address here' />
 							</div>
-							<div className='last'>
+							<div>
 								<Label htmlFor="3" aria-describedby='3'>Message</Label>
 								<Messege id="3" placeholder="Write your message here" aria-placeholder='Write your message here' />
 							</div>

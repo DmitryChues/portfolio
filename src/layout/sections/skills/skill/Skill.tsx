@@ -30,8 +30,11 @@ const StyledSkill = styled.div`
 	flex: 0 1 calc(100%/4 - 40px);
 	background-color: ${myTheme.colors.backGround.secondaryBg};
 	padding: 40px 30px 30px 20px;
-	*:first-child {
+	& :first-child {
 		margin: 0px 0px 24px 0px;
+	}
+	h3 + p {
+		margin: 8px 0px 0px 0px;
 	}
 	/* text-align: center; */
 `
@@ -42,7 +45,7 @@ const SkillTitle = styled.h3`
 	font-weight: 700;
 	line-height: 188%;
 	letter-spacing: -0.64px;
-	margin: 0px 0px 8px 0px;
+	
 `
 
 const SkillText = styled.p`

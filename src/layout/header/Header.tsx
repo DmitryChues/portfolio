@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
 import { Menu } from "../../components/menu/Menu";
@@ -7,12 +7,25 @@ import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { HeaderMenu } from "./headerMenu/HeaderMenu";
+import headerBg from '../../assets/images/contactBg.png'
 
 const items = ['Home', 'About', 'Skills', 'Works']
 
+
+
 export const Header = () => {
+	const [scrolled, setScrolled] = useState(false);
+	const handleScroll = () => {
+		if (window.scrollY > 0) {
+			setScrolled(true);
+		} else {
+			setScrolled(false);
+		}
+	};
+	window.addEventListener('scroll', handleScroll);
+
 	return (
-		<StyledHeader>
+		<StyledHeader className={scrolled ? 'scrolled-header' : ''}>
 			<Container>
 				<FlexWrapper align="center" justify="space-between">
 					<Logo />
@@ -25,7 +38,7 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
-	background-color: ${myTheme.colors.backGround.darkBg};
+	background-color: transparent;
 	color: ${myTheme.colors.font.light};
 	padding: 20px;
 	position: fixed;
@@ -33,6 +46,10 @@ const StyledHeader = styled.header`
 	left: 0;
 	right: 0;
 	z-index: 50;
+	&.scrolled-header {
+		background-color: ${myTheme.colors.backGround.darkBg};
+		padding: 10px;
+	}
 `
 
 const Link = styled.a`
