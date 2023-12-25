@@ -4,54 +4,63 @@ import { SectionTitle } from '../../../components/SectionTitle';
 import { Icon } from '../../../components/icon/Icon';
 import { SliderReview } from './slider/SliderReview';
 import { SliderPhoto } from './slider/SliderPhoto';
-import { FlexWrapper } from '../../../components/FlexWrapper';
 import { Container } from '../../../components/Container';
 import { ButtonNavTestimony } from '../../../components/ButtonNavTestymony';
 
+
 export const Testimony = () => {
 	return (
-		<StyledTestimony>
+		<StyledTestimony id='testimony'>
 			<Container>
 
-				<FlexWrapper gap='100px'>
+				<GridWrapper>
 					<SliderPhoto />
-					<ReviewWrapper>
-						<SectionTitle>Testimonial</SectionTitle>
-						<IconWrapper>
-							<Icon iconId={'quote'} viewBox='0 0 32 32' />
-						</IconWrapper>
-						<SliderReview />
-						<ButtonNavTestimony />
-					</ReviewWrapper>
-				</FlexWrapper>
+					<SectionTitle>Testimonial</SectionTitle>
+					<IconWrapper>
+						<Icon iconId={'quote'} viewBox='0 0 32 32' />
+					</IconWrapper>
+					<SliderReview />
+					<ButtonNavTestimony />
+				</GridWrapper>
+				{/* <ButtonNavTestimony /> */}
 
 			</Container>
 		</StyledTestimony>
 	);
 };
 
-const ReviewWrapper = styled.div`
-	min-width: 0;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: start;
-	${SectionTitle} {
-		margin: 0px 0px 20px 0px;
-		flex: 0 1 100%;
+const GridWrapper = styled.div`
+	& ${SectionTitle} {
+		margin: 0px 0px 40px 0px;
+		@media screen and (max-width: 992px) {
+			margin: 0px 0px 20px 0px;
+		}
+		@media screen and (max-width: 768px) {
+			margin: 0px 0px 30px 0px;
+		}
 	}
-	/* max-width: 500px; */
-	
-	/* justify-content:center;align-items: center; */
+
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: auto auto 1fr auto;
+	column-gap: 100px;
+	min-width: 0;
+	@media screen and (max-width: 992px) {
+		column-gap: 50px;
+	}
+	@media screen and (max-width: 768px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(5, auto);
+	}
 `
 
 const IconWrapper = styled.div`
 	margin: 0px 0px 30px 0px;
 	font-size: 0;
+	@media screen and (max-width: 992px) {
+			margin: 0px 0px 15px 0px;
+		}
 `
 
 const StyledTestimony = styled.section`
-	& ${FlexWrapper} {
-		min-width: 0;
-	}
-	
 `

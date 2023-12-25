@@ -4,6 +4,8 @@ import { FlexWrapper } from '../../../components/FlexWrapper';
 import { SectionTitle } from '../../../components/SectionTitle';
 import { Skill } from './skill/Skill';
 import { Container } from '../../../components/Container';
+import { myTheme } from '../../../styles/Theme.Styled';
+import { MobileSkill } from './mobileSkill/MobileSkill';
 
 const skillsData = [
 	{
@@ -54,12 +56,14 @@ const skillsData = [
 
 export const Skills = () => {
 	return (
-		<StyledSkills>
+		<StyledSkills id='skills'>
 			<Container>
 				<SectionTitle>My skills</SectionTitle>
-				<FlexWrapper justify='center' wrap='wrap' gap='40px'>
+				<FlexWrapper justify='center' wrap='wrap'>
 					<Skill skillsItem={skillsData} />
+					<MobileSkill skillsItem={skillsData} />
 				</FlexWrapper>
+
 			</Container>
 		</StyledSkills>
 	);
@@ -68,9 +72,29 @@ export const Skills = () => {
 const StyledSkills = styled.section`
 	${FlexWrapper} {
 		margin: 0 -20px;
+		gap: 40px;
+		/* position: relative; */
+		@media ${myTheme.breakpoints.tablet} {
+			margin: 0 -15px;
+			gap: 30px;
+		}
+		@media ${myTheme.breakpoints.mobile} {
+			margin: 0 -10px;
+			gap: 20px;
+		}
 	}
 	${SectionTitle} {
 		text-align: center;
 		margin: 0 0 80px 0;
+		
+		@media ${myTheme.breakpoints.tablet} {
+			margin: 0 0 60px 0;
+		}
+		@media ${myTheme.breakpoints.mobile} {
+			margin: 0 0 50px 0;
+		}
+		@media ${myTheme.breakpoints.mobileSmall} {
+			margin: 0 0 40px 0;
+		}
 	}
 `

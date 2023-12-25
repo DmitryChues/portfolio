@@ -2,18 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { myTheme } from '../../../styles/Theme.Styled';
 
-export const HeaderMenu = (props: { menuItems: Array<string> }) => {
+type menuItemsPropsType = {
+	name: string;
+	id: string
+}
+
+export const HeaderMenu = (props: { menuItems: Array<menuItemsPropsType> }) => {
 	return (
 
 		<StyledHeaderMenu>
 			<ul>
-
 				{props.menuItems.map((item, index) => {
 					return <ListItem key={index}>
-						<Link href="#">{item}</Link>
+						<Link href={`#${item.id}`}>{item.name}</Link>
 					</ListItem>
 				})}
-
 			</ul>
 		</StyledHeaderMenu>
 
@@ -24,6 +27,9 @@ const StyledHeaderMenu = styled.nav`
 	ul {
 		display: flex;
 		gap: 50px;
+	}
+	@media ${myTheme.breakpoints.tablet} {
+		display: none;
 	}
 `
 

@@ -23,7 +23,8 @@ export const Menu = (props: { menuItems: Array<string> }) => {
 const StyledMenu = styled.nav`
 	ul {
 		display: flex;
-		gap: 24px;
+		flex-wrap: wrap;
+		column-gap: 24px;
 	}
 `
 

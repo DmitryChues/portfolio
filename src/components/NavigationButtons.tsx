@@ -18,6 +18,7 @@ export const NavigationButtons = () => {
 };
 
 const StyledButtons = styled.div`
+align-self: flex-end;
 	display: flex;
 	gap: 24px;
 `

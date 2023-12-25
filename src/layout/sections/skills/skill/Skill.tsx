@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { Icon } from '../../../../components/icon/Icon';
 import { myTheme } from '../../../../styles/Theme.Styled';
 
-type skillsIconType = {
+type skillsItemType = {
 	id: string;
 	viewBox: string;
 	title: string;
 	description: string;
 }
 
-export const Skill = (props: { skillsItem: Array<skillsIconType> }) => {
+export const Skill = (props: { skillsItem: Array<skillsItemType> }) => {
 	return (
 		<>
 			{props.skillsItem.map((item, index) => {
@@ -33,10 +33,19 @@ const StyledSkill = styled.div`
 	& :first-child {
 		margin: 0px 0px 24px 0px;
 	}
-	h3 + p {
-		margin: 8px 0px 0px 0px;
+	h3:not(:last-child) {
+		margin: 0px 0px 8px 0px;
 	}
-	/* text-align: center; */
+	
+	@media ${myTheme.breakpoints.tablet} {
+		flex: 0 1 calc(100%/3 - 30px);
+	}
+	@media ${myTheme.breakpoints.mobile} {
+		flex: 0 1 calc(100%/2 - 20px);
+	}
+	@media ${myTheme.breakpoints.mobileSmall} {
+		display: none;
+	}
 `
 
 const SkillTitle = styled.h3`
@@ -45,7 +54,6 @@ const SkillTitle = styled.h3`
 	font-weight: 700;
 	line-height: 188%;
 	letter-spacing: -0.64px;
-	
 `
 
 const SkillText = styled.p`
@@ -54,4 +62,7 @@ const SkillText = styled.p`
 	font-weight: 500;
 	line-height: 170%;
 	letter-spacing: -0.28px;
+	@media ${myTheme.breakpoints.mobileSmall} {
+		display: none;
+	}
 `

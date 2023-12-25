@@ -5,7 +5,7 @@ import { FlexWrapper } from '../../../components/FlexWrapper';
 import { myTheme } from '../../../styles/Theme.Styled';
 import { Sotial } from '../../../components/social/Sotial';
 import { Container } from '../../../components/Container';
-import background from '../../../assets/images/bgMain.png';
+import background from '../../../assets/images/mainBg.jpg';
 
 export const iconsData = [
 	{
@@ -26,15 +26,14 @@ export const iconsData = [
 
 export const Main = () => {
 	return (
-		<StyledMain>
+		<StyledMain id='home'>
 			<Container>
-				<FlexWrapper height='100%' align='flex-end' justify='space-between'>
+				<FlexWrapper height='100%' align='flex-end' justify='space-between' gap='15px'>
 					<div>
 						<SmallText><span>Hello!</span> I am</SmallText>
 						<Name>Dmitry Chues</Name>
 						<MainTitle>A web developer</MainTitle>
 					</div>
-					{/* <Photo src={photo} alt="" /> */}
 					<Sotial socialItem={iconsData} />
 				</FlexWrapper>
 			</Container>
@@ -47,6 +46,15 @@ const StyledMain = styled.section`
 	min-height: 100vh;
 	display: flex;
 	background: linear-gradient(to bottom, rgba(0,0,0,0) 70%,rgba(0, 0, 0, 0.75) 100%), url(${photo})70% 100%/auto 95% no-repeat, url(${background})0 0/cover no-repeat;
+	@media ${myTheme.breakpoints.tablet} {
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 70%,rgba(0, 0, 0, 0.75) 100%), url(${photo})60% 100%/auto 95% no-repeat, url(${background})0 0/cover no-repeat;
+	}
+	@media ${myTheme.breakpoints.mobile} {
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 70%,rgba(0, 0, 0, 0.75) 100%), url(${photo})50% 100%/auto 95% no-repeat, url(${background})0 0/cover no-repeat;
+	}
+	@media ${myTheme.breakpoints.mobileSmall} {
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 70%,rgba(0, 0, 0, 0.75) 100%), url(${photo})30% 100%/auto 95% no-repeat, url(${background})0 0/cover no-repeat;
+	}
 `
 
 const SmallText = styled.span`
@@ -66,10 +74,10 @@ const MainTitle = styled.h1`
 	letter-spacing: -0.54px;
 `
 
-const Name = styled.h2`
+const Name = styled.span`
+	display: block;
 	font-family: Anton;
-	font-size: 130px;
-	font-weight: 400;
+	font-size: calc( (100vw - 320px)/(1440 - 320) * (130 - 58) + 58px);
 	line-height: 118%;
 	letter-spacing: 1.95px;
 	text-transform: uppercase;

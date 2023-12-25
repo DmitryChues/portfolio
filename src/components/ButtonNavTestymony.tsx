@@ -5,16 +5,26 @@ import { Icon } from "./icon/Icon";
 
 export const ButtonNavTestimony = () => {
 	return (
-		<BtnWrapper>
-			<NavigationButton className='testimony-button-prev'>
-				<Icon iconId={'arrow-prev'} width='20' height='20' viewBox='0 0 20 20' />
-			</NavigationButton>
-			<NavigationButton className='testimony-button-next'>
-				<Icon iconId={'arrow-next'} width='20' height='20' viewBox='0 0 20 20' />
-			</NavigationButton>
-		</BtnWrapper>
+		<PagNavWrapper>
+			<Pag className='testymony-pagination' />
+			<BtnWrapper>
+				<NavigationButton className='testimony-button-prev'>
+					<Icon iconId={'arrow-prev'} width='20' height='20' viewBox='0 0 20 20' />
+				</NavigationButton>
+				<NavigationButton className='testimony-button-next'>
+					<Icon iconId={'arrow-next'} width='20' height='20' viewBox='0 0 20 20' />
+				</NavigationButton>
+			</BtnWrapper>
+		</PagNavWrapper>
 	);
 };
+
+const PagNavWrapper = styled.div`
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`
 
 const NavigationButton = styled.button`
 	font-size: 0;
@@ -28,6 +38,17 @@ const NavigationButton = styled.button`
 `
 
 const BtnWrapper = styled.div`
+	/* grid-column: 2/3; */
 	display: flex;
+	justify-content: space-between;
 	gap: 20px;
+`
+
+const Pag = styled.div`
+	& span {
+		width: 20px;
+		height: 4px;
+		border-radius: 0;
+		background-color: ${myTheme.colors.accent};
+	}
 `

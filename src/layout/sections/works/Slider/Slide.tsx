@@ -15,7 +15,7 @@ export const Slide = (props: PropsSlide) => {
 
 		<StyledSlide>
 			<StyledImage src={props.src} />
-			<StyledWorkHover href='#'>
+			<StyledWorkHover>
 				<StyledTitle>
 					{props.title}
 				</StyledTitle>
@@ -32,9 +32,8 @@ export const Slide = (props: PropsSlide) => {
 	);
 };
 
-const StyledWorkHover = styled.a`
+const StyledWorkHover = styled.div`
 	display: none;
-	pointer-events: auto;
 	background-color: rgba(0, 0, 0, 0.59);
 	color: ${myTheme.colors.font.light};
 	padding: 50px;
@@ -44,14 +43,24 @@ const StyledWorkHover = styled.a`
 	top: 0;
 	width: 100%;
 	height: 100%;
+	@media ${myTheme.breakpoints.tablet} {
+		left: 0;
+		top: 100%;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		/* align-items: flex-end; */
+		position: relative;
+		background-color: ${myTheme.colors.backGround.primaryBg};
+		color: ${myTheme.colors.font.dark};
+	}
 `
 
 const StyledSlide = styled.div`
-	/* background-color: #ffffff; */
 	max-width: 100%;
-	
+
 	position: relative;
-	
 
 	&:hover {
 		& ${StyledWorkHover} {
@@ -92,10 +101,16 @@ const StyledLink = styled.a`
 		background-color: ${myTheme.colors.accent};
 		border: 1px solid ${myTheme.colors.accent};
 	}
+	@media ${myTheme.breakpoints.tablet} {
+		border: 1px solid ${myTheme.colors.font.dark};
+	}
 `
 
 const LinkWrapper = styled.div`
 	display: flex;
 	justify-content:center;align-items: center;
-	gap: 20px
+	gap: 20px;
+	@media ${myTheme.breakpoints.tablet} {
+		justify-content: flex-end;
+	}
 `

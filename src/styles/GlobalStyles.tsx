@@ -48,9 +48,7 @@ export const GlobalStyles = createGlobalStyle`
 		display: inline-block;
 	}
 	a:link,
-	a:visited {
-		text-decoration: none;
-	}
+	a:visited,
 	a:hover {
 		text-decoration: none;
 	}
@@ -71,5 +69,12 @@ export const GlobalStyles = createGlobalStyle`
 	}
 	section {
 		padding: 100px 0;
+		@media ${myTheme.breakpoints.tablet} {
+			padding: 70px 0;
+		}
+		@media ${myTheme.breakpoints.mobile} {
+			padding: 50px 0;
+		}
 	}
+	
 `

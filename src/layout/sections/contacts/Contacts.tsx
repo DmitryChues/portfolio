@@ -12,10 +12,10 @@ import contactBg from '../../../assets/images/contactBg.png'
 
 export const Contacts = () => {
 	return (
-		<StyledContacts>
+		<StyledContacts id='contact'>
 
 			<Container>
-				<FlexWrapper align='stretch' justify='space-between'>
+				<ContactsWrapper>
 					<FlexWrapper direction='column' align='start' justify='space-between'>
 						<SectionTitle>Contacts</SectionTitle>
 						<FlexWrapper direction='column' align='start' justify='space-between' gap='42px'>
@@ -43,16 +43,33 @@ export const Contacts = () => {
 						</GridWrapper>
 						<Button type='submit'>Send message</Button>
 					</StyledForm>
-				</FlexWrapper>
+				</ContactsWrapper>
 			</Container>
 
 		</StyledContacts>
 	);
 };
 
+const ContactsWrapper = styled.div`
+	display: flex;
+	/* align-items: stretch; */
+	justify-content: space-between;
+	column-gap: 15px;
+	@media ${myTheme.breakpoints.mobile} {
+		flex-direction: column;
+		row-gap: 50px;
+		&>${FlexWrapper} {
+			&>${FlexWrapper} {
+				margin: 0px 0px 50px 0px;
+			}
+			
+		}
+	}
+`
+
 const StyledContacts = styled.section`
 	min-height: 50vh;
-	background: url(${contactBg})0 0 /100% auto no-repeat;
+	background: url(${contactBg})0 0 /cover no-repeat;
 	color: ${myTheme.colors.font.light};
 	& ${SectionTitle} {
 		color: ${myTheme.colors.font.light};
@@ -68,6 +85,7 @@ const FormTitle = styled.h3`
 	font-family: Anton;
 	font-size: 24px;
 	margin: 0px 0px 60px 0px;
+	line-height: 120%;
 
 	position: relative;
 
@@ -110,6 +128,14 @@ const GridWrapper = styled.div`
 		font-size: 14px;
 		font-weight: 500;
 		letter-spacing: -0.24px;
+	}
+
+	@media ${myTheme.breakpoints.mobileSmall} {
+		grid-template-columns: 1fr;
+		margin: 0px 0px 30px 0px;
+		div:last-child {
+			grid-column: 1/2;
+		}
 	}
 `
 
