@@ -21,5 +21,6 @@ export const myTheme = {
 		tablet: 'screen and (max-width: 991.98px)',
 		mobile: 'screen and (max-width: 767.98px)',
 		mobileSmall: 'screen and (max-width: 575.98px)',
+		desktop: 'screen and (max-width: 1140px)',
 	}
 }

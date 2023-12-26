@@ -18,14 +18,13 @@ export const MobileSkill = (props: { skillsItem: Array<skillsItemType> }) => {
 		<>
 			{props.skillsItem.map((item, index) => {
 				return (
-					<>
-						<StyledMobileSkill isOpen={descriptionIsOpen} onClick={onSkillBtnClick} key={index}>
-							<Icon width='40' height='40' iconId={item.id} viewBox={item.viewBox} fill={myTheme.colors.accent} />
-							<SkillTitle>{item.title}</SkillTitle>
-							<SkillMobileTextPopup isOpen={descriptionIsOpen}>{item.description}</SkillMobileTextPopup>
-						</StyledMobileSkill>
 
-					</>
+					<StyledMobileSkill isOpen={descriptionIsOpen} onClick={onSkillBtnClick} key={index}>
+						<Icon width='40' height='40' iconId={item.id} viewBox={item.viewBox} fill={myTheme.colors.accent} />
+						<SkillTitle>{item.title}</SkillTitle>
+						<SkillMobileTextPopup isOpen={descriptionIsOpen}>{item.description}</SkillMobileTextPopup>
+					</StyledMobileSkill>
+
 				)
 			})}
 		</>
@@ -33,7 +32,7 @@ export const MobileSkill = (props: { skillsItem: Array<skillsItemType> }) => {
 };
 
 const StyledMobileSkill = styled.button<{ isOpen: boolean }>`
-	flex: 0 1 calc(100%/2 - 20px);
+	flex: 0 1 calc(100%/2 - 10px);
 	background-color: ${myTheme.colors.backGround.secondaryBg};
 	text-align: center;
 	padding: 20px;
@@ -43,16 +42,12 @@ const StyledMobileSkill = styled.button<{ isOpen: boolean }>`
 	}
 
 	${props => props.isOpen && css<{ isOpen: boolean }>`
-		/* flex: 0 1 calc(100% - 20px); */
+		flex: 0 1 calc(100% - 20px);
 	`}
-	/* h3 + p {
-		margin: 8px 0px 0px 0px;
-	} */
 	
 	@media ${myTheme.breakpoints.mobileSmall} {
 		display: block;
 		position: relative;
-		
 	}
 `
 

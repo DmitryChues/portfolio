@@ -41,48 +41,48 @@ const StyledWorkHover = styled.div`
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
-	@media ${myTheme.breakpoints.tablet} {
-		left: 0;
-		top: 100%;
+	right: 0;
+	bottom: 0;
+	@media ${myTheme.breakpoints.desktop} {
 		padding: 20px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		/* align-items: flex-end; */
 		position: relative;
+		gap: 5px;
 		background-color: ${myTheme.colors.backGround.primaryBg};
-		color: ${myTheme.colors.font.dark};
+		color: ${myTheme.colors.font.medium};
 	}
 `
 
 const StyledSlide = styled.div`
-	max-width: 100%;
-
+	/* max-width: 100%; */
 	position: relative;
 
-	&:hover {
-		& ${StyledWorkHover} {
-			display: flex;
-			flex-direction: column;
-			justify-content:center;
-			align-items: center;
+	@media screen and (min-width: 1140px){
+		&:hover {
+			& ${StyledWorkHover} {
+				display: flex;
+				flex-direction: column;
+				justify-content:center;
+				align-items: center;
+				gap: 5px;
+			}
 		}
 	}
+	
 `
 
 const StyledImage = styled.img`
 	width: 100%;
-	height: 260px;
+	height: 100%;
 	object-fit: cover;
+	aspect-ratio: 4 / 3;
 `
 
 const StyledTitle = styled.h3`
 	font-family: Anton;
 	font-size: 32px;
 	text-transform: uppercase;
-	
 `
 
 const StyledDescription = styled.span`
@@ -97,20 +97,28 @@ const StyledLink = styled.a`
 	padding: 16px 24px;
 	border-radius: 4px;
 	border: 1px solid ${myTheme.colors.font.light};
+	
 	&:hover {
 		background-color: ${myTheme.colors.accent};
 		border: 1px solid ${myTheme.colors.accent};
 	}
-	@media ${myTheme.breakpoints.tablet} {
-		border: 1px solid ${myTheme.colors.font.dark};
+	@media ${myTheme.breakpoints.desktop} {
+		border: 1px solid ${myTheme.colors.font.medium};
+		padding: 8px 12px;
+		&:hover {
+			background-color: ${myTheme.colors.accent};
+			border: 1px solid ${myTheme.colors.accent};
+			color: ${myTheme.colors.font.light};
+		}
 	}
 `
 
 const LinkWrapper = styled.div`
 	display: flex;
-	justify-content:center;align-items: center;
+	justify-content:center;
+	align-items: center;
 	gap: 20px;
-	@media ${myTheme.breakpoints.tablet} {
-		justify-content: flex-end;
+	@media ${myTheme.breakpoints.desktop} {
+		justify-content: flex-start;
 	}
 `

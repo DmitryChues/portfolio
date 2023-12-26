@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { myTheme } from '../../../../styles/Theme.Styled';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Pag } from '../../../../components/Pagination';
@@ -33,10 +31,10 @@ export const SliderPortfolio = (props: { slideItems: Array<slideItemsType> }) =>
 			spaceBetween={24}
 			loop={true}
 			breakpoints={{
+				// 575.98: {
+				// 	slidesPerView: 1,
+				// },
 				575.98: {
-					slidesPerView: 1,
-				},
-				767.98: {
 					slidesPerView: 2,
 				},
 				991.98: {

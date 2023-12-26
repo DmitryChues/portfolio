@@ -8,6 +8,7 @@ import { Navigation, Pagination, Controller } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { myTheme } from '../../../../styles/Theme.Styled';
 
 export const SliderPhoto = () => {
 	return (
@@ -41,7 +42,6 @@ export const SliderPhoto = () => {
 };
 
 const SliderContainer = styled.div`
-	/* width: 400px; */
 	min-width: 0;
 	grid-row: 1/5;
 	grid-column: 1/2;
@@ -55,13 +55,11 @@ const SliderContainer = styled.div`
 `
 
 const Photo = styled.img`
-	max-width: 400px;
 	width: 100%;
-	height: 420px;
 	object-fit: cover;
 	object-position: center;
-	@media screen and (max-width: 992px) {
-		height: 300px;
-		max-width: 250px;
+	aspect-ratio: 3 / 4;
+	@media ${myTheme.breakpoints.mobile} {
+		max-width: 290px;
 	}
 `

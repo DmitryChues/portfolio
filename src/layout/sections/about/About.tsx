@@ -14,7 +14,7 @@ export const About = () => {
 				<Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. In beatae, explicabo vero eum inventore ducimus provident natus minima unde minus dolore quidem est pariatur sapiente saepe, accusamus consectetur, qui sit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt consectetur, libero nostrum nemo itaque beatae? Quas, illum aliquid? Nemo iure voluptatibus eaque molestias recusandae tempore earum harum soluta possimus veritatis nobis explicabo quisquam in, expedita perspiciatis temporibus? Quaerat, ipsum quam. Mollitia illum aperiam nemo corporis sunt. Perferendis exercitationem at laboriosam?</Text>
 				<StyledSlogan>
 					<Slogan>let's work together on Your Next Project</Slogan>
-					<Button as={'a'} href='#'>Hire me now</Button>
+					<Button as={'a'} href="#contact">Hire me now</Button>
 				</StyledSlogan>
 			</Container>
 		</StyledAbout>

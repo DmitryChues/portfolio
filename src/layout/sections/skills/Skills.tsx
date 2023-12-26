@@ -82,6 +82,10 @@ const StyledSkills = styled.section`
 			margin: 0 -10px;
 			gap: 20px;
 		}
+		@media ${myTheme.breakpoints.mobile} {
+			margin: 0 -5px;
+			gap: 10px;
+		}
 	}
 	${SectionTitle} {
 		text-align: center;

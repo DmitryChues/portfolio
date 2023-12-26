@@ -22,7 +22,6 @@ export const Testimony = () => {
 					<SliderReview />
 					<ButtonNavTestimony />
 				</GridWrapper>
-				{/* <ButtonNavTestimony /> */}
 
 			</Container>
 		</StyledTestimony>

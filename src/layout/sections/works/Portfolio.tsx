@@ -4,8 +4,9 @@ import { SectionTitle } from '../../../components/SectionTitle';
 import { Menu } from '../../../components/menu/Menu';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import socialImage from '../../../assets/images/design-portfolio.png';
+import timerImage from '../../../assets/images/forSlidePortf.jpeg';
+import deskImage from '../../../assets/images/forSlidePortfolio.jpeg';
 import { NavigationButtons } from '../../../components/NavigationButtons';
-import { Pag } from '../../../components/Pagination';
 import { Container } from '../../../components/Container';
 import { SliderPortfolio } from './Slider/SliderPortfolio';
 import { myTheme } from '../../../styles/Theme.Styled';
@@ -15,23 +16,23 @@ const worksItems = ['All', 'Landing page', 'React', 'SPA']
 const slideWorkItems = [
 	{
 		title: 'Social',
-		description: 'blablabla',
-		src: socialImage
+		description: 'Lorem, ipsum dolor.',
+		src: socialImage,
 	},
 	{
 		title: 'Timer',
-		description: 'bla',
-		src: socialImage
+		description: 'Lorem, ipsum',
+		src: timerImage,
 	},
 	{
 		title: 'Shop',
-		description: 'blabla',
-		src: socialImage
+		description: 'Lorem, ipsum dolor.',
+		src: deskImage,
 	},
 	{
 		title: 'Lalala',
-		description: 'blablabla',
-		src: socialImage
+		description: 'ipsum dolor',
+		src: socialImage,
 	},
 ]
 

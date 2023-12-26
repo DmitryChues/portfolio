@@ -24,7 +24,7 @@ const StyledMenu = styled.nav`
 	ul {
 		display: flex;
 		flex-wrap: wrap;
-		column-gap: 24px;
+		column-gap: 10px;
 	}
 `
 

@@ -6,6 +6,7 @@ import { myTheme } from '../../../styles/Theme.Styled';
 import { Sotial } from '../../../components/social/Sotial';
 import { Container } from '../../../components/Container';
 import background from '../../../assets/images/mainBg.jpg';
+import { font } from '../../../styles/Common';
 
 export const iconsData = [
 	{
@@ -75,10 +76,8 @@ const MainTitle = styled.h1`
 `
 
 const Name = styled.span`
+	${font({ family: "'Anton', sans-serif", lineHeight: 1.18, Fmin: 58, Fmax: 130 })}
 	display: block;
-	font-family: Anton;
-	font-size: calc( (100vw - 320px)/(1440 - 320) * (130 - 58) + 58px);
-	line-height: 118%;
 	letter-spacing: 1.95px;
 	text-transform: uppercase;
 `

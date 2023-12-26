@@ -22,7 +22,6 @@ export const Sotial = (props: SotialPropsType) => {
 		<StyledSotial orientation={props.flexDirection}>
 
 			{props.socialItem.map((item, index) => {
-				console.log(item.id)
 				return <ListItem key={index}>
 					<Link href="#">
 						<Icon width='22' height='22' iconId={item.id} viewBox={item.viewbox} fill={myTheme.colors.font.light} stroke='white' />
