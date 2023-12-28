@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
-import { myTheme } from "../../styles/Theme.Styled";
 import { Container } from "../../components/Container";
 import { FlexWrapper } from "../../components/FlexWrapper";
-import { HeaderMenu } from "./headerMenu/HeaderMenu";
-import { MobileMenu } from "./mobileMenu/MobileMenu";
-import { LinkContact } from "./linkContact/LinkContact"
+import { DesktopMenu } from "./headerMenu/desktopMenu/DesktopMenu";
+import { MobileMenu } from "./headerMenu/mobileMenu/MobileMenu";
+import { SH } from "./Header_Styles";
 
 const items = [
 	{
@@ -33,7 +31,19 @@ const items = [
 
 
 
-export const Header = () => {
+export const Header: React.FC = () => {
+
+	const [width, setWidth] = React.useState(window.innerWidth);
+	const breakpoint = 991.98;
+
+	React.useEffect(() => {
+		const handleWindowResize = () => setWidth(window.innerWidth)
+		window.addEventListener("resize", handleWindowResize);
+
+		// Return a function from the effect that removes the event listener
+		return () => window.removeEventListener("resize", handleWindowResize);
+	}, []);
+
 	const [scrolled, setScrolled] = useState(false);
 	const handleScroll = () => {
 		if (window.scrollY > 0) {
@@ -45,41 +55,16 @@ export const Header = () => {
 	window.addEventListener('scroll', handleScroll);
 
 	return (
-		<StyledHeader className={scrolled ? 'scrolled-header' : 'header'}>
+		<SH.Header className={scrolled ? 'scrolled-header' : 'header'}>
 			<Container>
 				<FlexWrapper align="center" justify="space-between">
 					<Logo />
-					<HeaderMenu menuItems={items} />
-					<LinkContact href="#contact">Contact</LinkContact>
-					<MobileMenu menuItems={items} />
+
+					{width < breakpoint ? <MobileMenu menuItems={items} /> : <DesktopMenu menuItems={items} />}
+					{width > breakpoint ? <SH.LinkContact href="#contact">Contact</SH.LinkContact> : <></>}
+
 				</FlexWrapper>
 			</Container>
-		</StyledHeader>
+		</SH.Header>
 	)
 }
-
-const StyledHeader = styled.header`
-	background-color: transparent;
-	color: ${myTheme.colors.font.light};
-	padding: 20px 0px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 50;
-	transition: all 0.3s ease;
-	@media ${myTheme.breakpoints.tablet} {
-		padding: 15px 0px;
-	}
-	
-	&.scrolled-header {
-		background-color: ${myTheme.colors.backGround.darkBg};
-		padding: 15px 0px;
-	}
-
-	& ${LinkContact} {
-		@media ${myTheme.breakpoints.tablet} {
-			display: none;
-		}
-	}
-`

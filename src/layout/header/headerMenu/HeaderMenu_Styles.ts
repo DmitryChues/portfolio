@@ -1,48 +1,26 @@
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
-import { myTheme } from '../../../styles/Theme.Styled';
-import { LinkContact } from '../linkContact/LinkContact';
+import styled, { css } from "styled-components"
+import { myTheme } from "../../../styles/Theme.Styled"
 
-type menuItemsPropsType = {
-	name: string;
-	id: string
-}
+//======================  Menu ============================
 
-export const MobileMenu = (props: { menuItems: Array<menuItemsPropsType> }) => {
-	const [menuIsOpen, setmenuIsOpen] = useState(false)
-	const onBurgerBtnClick = () => { setmenuIsOpen(!menuIsOpen) }
-	return (
-
-		<StyledMobileMenu>
-			<BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
-				<span></span>
-			</BurgerButton>
-
-			<MobileMenuPopup isOpen={menuIsOpen} >
-				<ul>
-					{props.menuItems.map((item, index) => {
-						return <ListItem key={index}>
-							<Link href={`#${item.id}`}>{item.name}</Link>
-						</ListItem>
-					})}
-				</ul>
-				<LinkContact href="#contact">Contact</LinkContact>
-			</MobileMenuPopup>
-
-		</StyledMobileMenu>
-
-	);
-};
-
-const StyledMobileMenu = styled.nav`
-	display: none;
-	@media ${myTheme.breakpoints.tablet} {
-		display: block;
-	}
-	
+const MenuItem = styled.li`
 `
 
+const Link = styled.a`
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	&:hover {
+		color: ${myTheme.colors.accent};
+	}
+`
 
+//====================== Mobile Menu ============================
+
+const MobileMenu = styled.nav`
+`
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 	
@@ -63,9 +41,6 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 		row-gap: 40px;
 		justify-content:center;
 		align-items: center;
-		& ${LinkContact} {
-			display: flex !important;
-		}
 	`}
 
 	ul {
@@ -73,21 +48,6 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 		gap: 40px;
 		flex-direction: column;
 		align-items: center;
-	}
-`
-
-const ListItem = styled.li`
-	
-`
-
-const Link = styled.a`
-	font-family: Montserrat;
-	font-size: 14px;
-	font-weight: 600;
-	text-transform: uppercase;
-	text-align: center;
-	&:hover {
-		color: ${myTheme.colors.accent};
 	}
 `
 
@@ -139,3 +99,25 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 
 	}
 `
+
+//====================== Desktop Menu ============================
+
+const DesktopMenu = styled.nav`
+	ul {
+		display: flex;
+		gap: 50px;
+	}
+`
+
+//====================== export ============================
+
+export const S = {
+	MenuItem,
+	Link,
+
+	MobileMenu,
+	MobileMenuPopup,
+	BurgerButton,
+
+	DesktopMenu
+}
