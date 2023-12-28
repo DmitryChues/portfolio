@@ -82,7 +82,7 @@ const StyledSkills = styled.section`
 			margin: 0 -10px;
 			gap: 20px;
 		}
-		@media ${myTheme.breakpoints.mobile} {
+		@media ${myTheme.breakpoints.mobileSmall} {
 			margin: 0 -5px;
 			gap: 10px;
 		}

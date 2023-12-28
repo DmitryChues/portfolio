@@ -20,6 +20,7 @@ export const SliderPhoto = () => {
 					prevEl: '.testimony-button-prev',
 				}}
 				autoHeight={true}
+				allowTouchMove={false}
 			>
 				<SwiperSlide>
 
@@ -45,10 +46,10 @@ const SliderContainer = styled.div`
 	min-width: 0;
 	grid-row: 1/5;
 	grid-column: 1/2;
-	@media screen and (max-width: 992px) {
+	@media ${myTheme.breakpoints.tablet} {
 		margin: 0px 0px 40px 0px;
 	}
-	@media screen and (max-width: 768px) {
+	@media ${myTheme.breakpoints.mobile} {
 		margin: 0px 0px 20px 0px;
 		grid-row: 2/3;
 	}

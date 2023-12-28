@@ -52,7 +52,6 @@ export const Contacts = () => {
 
 const ContactsWrapper = styled.div`
 	display: flex;
-	/* align-items: stretch; */
 	justify-content: space-between;
 	column-gap: 15px;
 	@media ${myTheme.breakpoints.mobile} {
@@ -68,7 +67,7 @@ const ContactsWrapper = styled.div`
 `
 
 const StyledContacts = styled.section`
-	min-height: 50vh;
+	/* min-height: 50vh; */
 	background: url(${contactBg})0 0 /cover no-repeat;
 	color: ${myTheme.colors.font.light};
 	& ${SectionTitle} {

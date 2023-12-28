@@ -42,7 +42,7 @@ const StyledMobileSkill = styled.button<{ isOpen: boolean }>`
 	}
 
 	${props => props.isOpen && css<{ isOpen: boolean }>`
-		flex: 0 1 calc(100% - 20px);
+		/* flex: 0 1 calc(100% - 20px); */
 	`}
 	
 	@media ${myTheme.breakpoints.mobileSmall} {

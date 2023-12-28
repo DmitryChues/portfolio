@@ -24,6 +24,7 @@ export const SliderReview = () => {
 						type: 'bullets',
 						// clickable: true
 					}}
+					allowTouchMove={false}
 				>
 					<SwiperSlide>
 						<Review>
@@ -61,7 +62,7 @@ const Review = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: 0px 0px 30px 0px;
-	@media screen and (max-width: 992px) {
+	@media ${myTheme.breakpoints.tablet} {
 		margin: 0px 0px 10px 0px;
 	}
 `
@@ -73,7 +74,7 @@ const Text = styled.p`
 	font-weight: 500;
 	line-height: 228.571%;
 	letter-spacing: -0.28px;
-	@media screen and (max-width: 768px) {
+	@media ${myTheme.breakpoints.mobile} {
 		line-height: 200%;
 	}
 `

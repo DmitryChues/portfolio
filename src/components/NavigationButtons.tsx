@@ -1,5 +1,4 @@
 import React from 'react';
-import { FlexWrapper } from './FlexWrapper';
 import styled from 'styled-components';
 import { myTheme } from '../styles/Theme.Styled';
 import { Icon } from './icon/Icon';
@@ -18,7 +17,7 @@ export const NavigationButtons = () => {
 };
 
 const StyledButtons = styled.div`
-align-self: flex-end;
+	align-self: flex-end;
 	display: flex;
 	gap: 24px;
 `

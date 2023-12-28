@@ -29,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
 		-webkit-text-size-adjust: 100%;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		min-width: 375px;
 	}
 	input,
 	button,

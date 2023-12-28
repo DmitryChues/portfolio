@@ -6,6 +6,7 @@ import { SliderReview } from './slider/SliderReview';
 import { SliderPhoto } from './slider/SliderPhoto';
 import { Container } from '../../../components/Container';
 import { ButtonNavTestimony } from '../../../components/ButtonNavTestymony';
+import { myTheme } from '../../../styles/Theme.Styled';
 
 
 export const Testimony = () => {
@@ -31,10 +32,10 @@ export const Testimony = () => {
 const GridWrapper = styled.div`
 	& ${SectionTitle} {
 		margin: 0px 0px 40px 0px;
-		@media screen and (max-width: 992px) {
+		@media ${myTheme.breakpoints.tablet} {
 			margin: 0px 0px 20px 0px;
 		}
-		@media screen and (max-width: 768px) {
+		@media ${myTheme.breakpoints.mobile} {
 			margin: 0px 0px 30px 0px;
 		}
 	}
@@ -44,10 +45,10 @@ const GridWrapper = styled.div`
 	grid-template-rows: auto auto 1fr auto;
 	column-gap: 100px;
 	min-width: 0;
-	@media screen and (max-width: 992px) {
+	@media ${myTheme.breakpoints.tablet} {
 		column-gap: 50px;
 	}
-	@media screen and (max-width: 768px) {
+	@media ${myTheme.breakpoints.mobile} {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, auto);
 	}
@@ -56,7 +57,7 @@ const GridWrapper = styled.div`
 const IconWrapper = styled.div`
 	margin: 0px 0px 30px 0px;
 	font-size: 0;
-	@media screen and (max-width: 992px) {
+	@media ${myTheme.breakpoints.tablet} {
 			margin: 0px 0px 15px 0px;
 		}
 `
