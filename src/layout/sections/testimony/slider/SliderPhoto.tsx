@@ -46,9 +46,6 @@ const SliderContainer = styled.div`
 	min-width: 0;
 	grid-row: 1/5;
 	grid-column: 1/2;
-	@media ${myTheme.breakpoints.tablet} {
-		margin: 0px 0px 40px 0px;
-	}
 	@media ${myTheme.breakpoints.mobile} {
 		margin: 0px 0px 20px 0px;
 		grid-row: 2/3;

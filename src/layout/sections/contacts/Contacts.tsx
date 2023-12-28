@@ -67,7 +67,6 @@ const ContactsWrapper = styled.div`
 `
 
 const StyledContacts = styled.section`
-	/* min-height: 50vh; */
 	background: url(${contactBg})0 0 /cover no-repeat;
 	color: ${myTheme.colors.font.light};
 	& ${SectionTitle} {
@@ -123,10 +122,14 @@ const GridWrapper = styled.div`
 		border-radius: 2px;
 		background: rgba(202, 205, 209, 0.10);
 		color: ${myTheme.colors.font.light};
-		outline: none;
+		/* outline: none; */
 		font-size: 14px;
 		font-weight: 500;
 		letter-spacing: -0.24px;
+
+		&:focus-visible {
+			outline: 1px solid #2e2e2e;
+		}
 	}
 
 	@media ${myTheme.breakpoints.mobileSmall} {

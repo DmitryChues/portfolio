@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SectionTitle } from '../../../components/SectionTitle';
-import { Menu } from '../../../components/menu/Menu';
+import { TabMenu } from './TabMenu/TabMenu';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import socialImage from '../../../assets/images/design-portfolio.png';
 import timerImage from '../../../assets/images/forSlidePortf.jpeg';
 import deskImage from '../../../assets/images/forSlidePortfolio.jpeg';
 import { NavigationButtons } from '../../../components/NavigationButtons';
 import { Container } from '../../../components/Container';
-import { SliderPortfolio } from './Slider/SliderPortfolio';
+import { SliderPortfolio } from './slider/SliderPortfolio';
 import { myTheme } from '../../../styles/Theme.Styled';
 
 const worksItems = ['All', 'Landing page', 'React', 'SPA']
@@ -43,7 +43,7 @@ export const Portfolio = () => {
 			<Container>
 				<NavPortfolioWrapper>
 					<SectionTitle>Portfolio</SectionTitle>
-					<Menu menuItems={worksItems} />
+					<TabMenu menuItems={worksItems} />
 					<NavigationButtons />
 				</NavPortfolioWrapper>
 				<SliderPortfolio slideItems={slideWorkItems} />
