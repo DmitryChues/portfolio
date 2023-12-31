@@ -6,15 +6,13 @@ import { Slide } from './Slide';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-
-
 type slideItemsType = {
 	title: string;
 	src: string;
 	description: string;
 }
 
-export const SliderPortfolio = (props: { slideItems: Array<slideItemsType> }) => {
+export const SliderPortfolio: React.FC<{ slideItems: Array<slideItemsType> }> = (props: { slideItems: Array<slideItemsType> }) => {
 	return (
 		<Swiper
 			modules={[Navigation, Pagination]}
