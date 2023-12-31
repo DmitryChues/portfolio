@@ -10,15 +10,21 @@ type ContactPropsType = {
 	value: string;
 }
 
-export const Contact = (props: ContactPropsType) => {
+export const ContactItems: React.FC<{ contacts: Array<ContactPropsType> }> = (props: { contacts: Array<ContactPropsType> }) => {
 	return (
-		<ContactInfo>
-			<Icon iconId={props.itemId} viewBox='0 0 24 25' width='24' height='24' fill={myTheme.colors.accent}></Icon>
-			<FlexWrapper direction='column' align='start'>
-				<Title>{props.title}</Title>
-				<Value>{props.value}</Value>
-			</FlexWrapper>
-		</ContactInfo>
+		<>
+			{props.contacts.map((item, index) => {
+				return (
+					<ContactInfo key={index}>
+						<Icon iconId={item.itemId} viewBox='0 0 24 25' width='24' height='24' fill={myTheme.colors.accent}></Icon>
+						<FlexWrapper direction='column' align='start'>
+							<Title>{item.title}</Title>
+							<Value>{item.value}</Value>
+						</FlexWrapper>
+					</ContactInfo>
+				)
+			})}
+		</>
 	);
 };
 
