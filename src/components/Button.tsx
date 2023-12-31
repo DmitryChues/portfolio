@@ -13,6 +13,7 @@ export const Button = styled.button`
 	text-transform: uppercase;
 	border: 1px solid ${myTheme.colors.accent};
 	&:hover {
+		color: ${myTheme.colors.font.light};
 		background-color: ${myTheme.colors.buttonHover};
 		border: 1px solid ${myTheme.colors.buttonHover};
 	}
