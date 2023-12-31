@@ -28,8 +28,8 @@ export const SliderPhoto: React.FC<{ photoData: Array<reviewDataPropsType> }> = 
 			>
 				{props.photoData.map((item, index) => {
 					return (
-						<SwiperSlide>
-							<S.Photo key={index} src={item.photoPath}></S.Photo>
+						<SwiperSlide key={index}>
+							<S.Photo src={item.photoPath}></S.Photo>
 						</SwiperSlide>
 					)
 				})}
