@@ -5,7 +5,7 @@ import { Icon } from '../../../components/icon/Icon';
 import { SliderReview } from './slider/SliderReview';
 import { SliderPhoto } from './slider/SliderPhoto';
 import { Container } from '../../../components/Container';
-import { ButtonNavTestimony } from '../../../components/ButtonNavTestymony';
+import { NavigationTestymony } from './slider/NavigationTestymony';
 import { myTheme } from '../../../styles/Theme.Styled';
 
 
@@ -21,7 +21,7 @@ export const Testimony = () => {
 						<Icon iconId={'quote'} viewBox='0 0 32 32' />
 					</IconWrapper>
 					<SliderReview />
-					<ButtonNavTestimony />
+					<NavigationTestymony />
 				</GridWrapper>
 
 			</Container>

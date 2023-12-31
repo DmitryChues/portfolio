@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { myTheme } from "../styles/Theme.Styled";
+import { myTheme } from "../../../../styles/Theme.Styled";
 import React from 'react';
-import { Icon } from "./icon/Icon";
+import { Icon } from "../../../../components/icon/Icon";
 
-export const ButtonNavTestimony = () => {
+export const NavigationTestymony = () => {
 	return (
 		<PagNavWrapper>
 			<Pag className='testymony-pagination' />
