@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SectionTitle } from '../../../components/SectionTitle';
-import { TabMenu } from './TabMenu/TabMenu';
+import { TabMenu } from './tabMenu/TabMenu';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import socialImage from '../../../assets/images/design-portfolio.png';
 import timerImage from '../../../assets/images/forSlidePortf.jpeg';

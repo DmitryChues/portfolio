@@ -55,7 +55,7 @@ const StyledWorkHover = styled.div`
 `
 
 const StyledSlide = styled.div`
-	/* max-width: 100%; */
+
 	position: relative;
 
 	@media screen and (min-width: 1140px){

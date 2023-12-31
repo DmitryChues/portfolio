@@ -27,13 +27,9 @@ export const SliderPortfolio = (props: { slideItems: Array<slideItemsType> }) =>
 				type: 'bullets',
 				clickable: true
 			}}
-			// slidesPerView={3}
 			spaceBetween={24}
 			loop={true}
 			breakpoints={{
-				// 575.98: {
-				// 	slidesPerView: 1,
-				// },
 				575.98: {
 					slidesPerView: 2,
 				},
