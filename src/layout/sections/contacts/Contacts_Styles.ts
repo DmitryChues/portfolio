@@ -4,6 +4,8 @@ import { FlexWrapper } from "../../../components/FlexWrapper"
 import { SectionTitle } from "../../../components/SectionTitle"
 import contactBg from '../../../assets/images/contactBg.png'
 
+// ============== Contacts =============================
+
 const ContactsWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -114,6 +116,33 @@ const Label = styled.label`
 	margin: 0px 0px 12px 0px;
 `
 
+// =============== Contacts Items ============================
+
+const ContactInfo = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 16px;
+`
+
+const IconWrapper = styled.div`
+	color: ${myTheme.colors.accent};
+`
+
+const Title = styled.span`
+	color: ${myTheme.colors.font.additional};
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: -0.32px;
+	margin: 0px 0px 10px 0px;
+`
+
+const Value = styled.span`
+	font-weight: 500;
+	letter-spacing: -0.28px;
+`
+
+// ============================================================
+
 export const S = {
 	ContactsWrapper,
 	Contacts,
@@ -123,5 +152,10 @@ export const S = {
 	Name,
 	Email,
 	Messege,
-	Label
+	Label,
+
+	ContactInfo,
+	IconWrapper,
+	Title,
+	Value
 }
