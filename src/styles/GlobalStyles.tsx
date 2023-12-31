@@ -51,6 +51,7 @@ export const GlobalStyles = createGlobalStyle`
 	a:link,
 	a:visited,
 	a:hover {
+		color: none;
 		text-decoration: none;
 	}
 	ul li {

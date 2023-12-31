@@ -1,84 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Icon } from '../../../../components/icon/Icon';
 import { myTheme } from '../../../../styles/Theme.Styled';
 import styled, { css } from 'styled-components';
+import { useCollapse } from 'react-collapsed'
+import { S } from './MobileSkill_Styles';
 
-type skillsItemType = {
-	id: string;
+type SkillPropsType = {
+	iconId: string;
 	viewBox: string;
 	title: string;
 	description: string;
 }
 
-export const MobileSkill = (props: { skillsItem: Array<skillsItemType> }) => {
-	const [descriptionIsOpen, setDescriptionIsOpen] = useState(false)
-	const onSkillBtnClick = () => { setDescriptionIsOpen(!descriptionIsOpen) }
+export const MobileSkill = (props: SkillPropsType) => {
+	const config = {
+		duration: 300,
+	}
+	const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(config)
+
 	return (
-
 		<>
-			{props.skillsItem.map((item, index) => {
-				return (
+			<S.StyledMobileSkill isOpen={isExpanded} {...getToggleProps()}>
+				<Icon width='40' height='40' iconId={props.iconId} viewBox={props.viewBox} />
+				<S.SkillTitle isOpen={isExpanded} >{props.title}</S.SkillTitle>
 
-					<StyledMobileSkill isOpen={descriptionIsOpen} onClick={onSkillBtnClick} key={index}>
-						<Icon width='40' height='40' iconId={item.id} viewBox={item.viewBox} fill={myTheme.colors.accent} />
-						<SkillTitle>{item.title}</SkillTitle>
-						<SkillMobileTextPopup isOpen={descriptionIsOpen}>{item.description}</SkillMobileTextPopup>
-					</StyledMobileSkill>
-
-				)
-			})}
+			</S.StyledMobileSkill>
+			<S.SkillMobileTextPopup {...getCollapseProps()}><p>{props.description}</p></S.SkillMobileTextPopup>
 		</>
-	);
+	)
 };
-
-const StyledMobileSkill = styled.button<{ isOpen: boolean }>`
-	flex: 0 1 calc(100%/2 - 10px);
-	background-color: ${myTheme.colors.backGround.secondaryBg};
-	text-align: center;
-	padding: 20px;
-	display: none;
-	& :first-child {
-		margin: 0px 0px 24px 0px;
-	}
-
-	${props => props.isOpen && css<{ isOpen: boolean }>`
-		/* flex: 0 1 calc(100% - 20px); */
-	`}
-	
-	@media ${myTheme.breakpoints.mobileSmall} {
-		display: block;
-		position: relative;
-	}
-`
-
-const SkillTitle = styled.h3`
-	color: ${myTheme.colors.font.dark};
-	font-size: 18px;
-	font-weight: 700;
-	line-height: 188%;
-	letter-spacing: -0.64px;
-	@media ${myTheme.breakpoints.mobileSmall} {
-		line-height: 120%;
-	}
-`
-
-const SkillMobileTextPopup = styled.p<{ isOpen: boolean }>`
-	font-family: Montserrat;
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 170%;
-	letter-spacing: -0.28px;
-	display: none;
-	
-
-	${props => props.isOpen && css<{ isOpen: boolean }>`
-		display: block;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		border: 1px solid #000;
-		z-index: 2;
-		background-color: ${myTheme.colors.accent};
-	`}
-`
