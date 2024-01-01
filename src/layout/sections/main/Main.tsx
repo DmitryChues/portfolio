@@ -4,8 +4,6 @@ import { Sotial } from '../../../components/social/Sotial';
 import { Container } from '../../../components/Container';
 import { S } from './Main_Styles';
 
-
-
 export const iconsData = [
 	{
 		id: "linkedin",
