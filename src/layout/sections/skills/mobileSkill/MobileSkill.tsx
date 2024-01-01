@@ -1,7 +1,5 @@
 import React from 'react';
 import { Icon } from '../../../../components/icon/Icon';
-import { myTheme } from '../../../../styles/Theme.Styled';
-import styled, { css } from 'styled-components';
 import { useCollapse } from 'react-collapsed'
 import { S } from './MobileSkill_Styles';
 
