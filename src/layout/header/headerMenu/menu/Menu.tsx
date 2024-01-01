@@ -12,7 +12,7 @@ export const Menu: React.FC<{ menuItems: Array<menuItemsPropsType> }> = (props: 
 		<ul>
 			{props.menuItems.map((item, index) => {
 				return <S.MenuItem key={index}>
-					<S.Link href={`#${item.id}`}>{item.name}</S.Link>
+					<S.NavLink activeClass='active' offset={-70} spy={true} smooth={true} duration={500} delay={500} to={item.id}>{item.name}</S.NavLink>
 				</S.MenuItem>
 			})}
 		</ul>

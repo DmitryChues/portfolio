@@ -1,18 +1,20 @@
 import styled, { css } from "styled-components"
 import { myTheme } from "../../../styles/Theme.Styled"
+import { Link } from "react-scroll"
 
 //======================  Menu ============================
 
 const MenuItem = styled.li`
 `
 
-const Link = styled.a`
+const NavLink = styled(Link)`
 	font-family: Montserrat;
 	font-size: 14px;
 	font-weight: 600;
 	text-transform: uppercase;
 	text-align: center;
-	&:hover {
+	cursor: pointer;
+	&:hover, &.active {
 		color: ${myTheme.colors.accent};
 	}
 `
@@ -113,7 +115,7 @@ const DesktopMenu = styled.nav`
 
 export const S = {
 	MenuItem,
-	Link,
+	NavLink,
 
 	MobileMenu,
 	MobileMenuPopup,
