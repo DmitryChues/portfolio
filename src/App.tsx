@@ -8,6 +8,7 @@ import { Testimony } from './layout/sections/testimony/Testimony';
 import { Contacts } from './layout/sections/contacts/Contacts';
 import { Footer } from './layout/footer/Footer';
 import { About } from './layout/sections/about/About';
+import { GoTopBtn } from './components/goTopBtn/GoTopBtn';
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 			<Testimony />
 			<Contacts />
 			<Footer />
+			<GoTopBtn />
 		</div>
 	);
 }
