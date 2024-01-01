@@ -26,7 +26,7 @@ export const SliderPortfolio: React.FC<{ slideItems: Array<slideItemsType> }> = 
 				clickable: true
 			}}
 			spaceBetween={24}
-			loop={true}
+			// loop={true}
 			breakpoints={{
 				575.98: {
 					slidesPerView: 2,

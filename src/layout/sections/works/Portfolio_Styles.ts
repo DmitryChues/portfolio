@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { myTheme } from "../../../styles/Theme.Styled"
 import { FlexWrapper } from "../../../components/FlexWrapper"
 
@@ -39,7 +39,7 @@ const Menu = styled.nav`
 const Item = styled.li`
 `
 
-const Button = styled.button`
+const Button = styled.button<{ active?: boolean }>`
 	font-size: 14px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -51,6 +51,12 @@ const Button = styled.button`
 		color: ${myTheme.colors.accent};
 		border-radius: 4px;
 	}
+
+	${props => props.active && css<{ active?: boolean }>`
+		border: 1px solid ${myTheme.colors.accent};
+		color: ${myTheme.colors.accent};
+		border-radius: 4px;
+	`}
 `
 
 export const S = {
