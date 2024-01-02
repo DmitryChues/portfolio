@@ -4,6 +4,7 @@ import { myTheme } from "../../../../styles/Theme.Styled"
 const DesktopSkill = styled.div`
 	background-color: ${myTheme.colors.backGround.secondaryBg};
 	padding: 40px 30px 30px 20px;
+	height: 100%;
 	h3:not(:last-child) {
 		margin: 0px 0px 8px 0px;
 	}

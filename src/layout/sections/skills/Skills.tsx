@@ -4,6 +4,7 @@ import { Container } from '../../../components/Container';
 import { MobileSkill } from './mobileSkill/MobileSkill';
 import { DesktopSkill } from './desktopSkill/DesktopSkill';
 import { S } from './Skills_Styles';
+import { Fade } from "react-awesome-reveal";
 
 const skillsData = [
 	{
@@ -76,11 +77,13 @@ export const Skills = () => {
 								<MobileSkill key={index} iconId={s.iconId} title={s.title} description={s.description} viewBox={s.viewBox} />
 							)
 						})
-						: skillsData.map((s, index) => {
-							return (
-								<DesktopSkill key={index} iconId={s.iconId} title={s.title} description={s.description} viewBox={s.viewBox} />
-							)
-						})
+						: <Fade cascade damping={0.2}>
+							{skillsData.map((s, index) => {
+								return (
+									<DesktopSkill key={index} iconId={s.iconId} title={s.title} description={s.description} viewBox={s.viewBox} />
+								)
+							})}
+						</Fade>
 					}
 
 				</S.SkillsWrapper>

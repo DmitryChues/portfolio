@@ -14,6 +14,7 @@ const NavLink = styled(Link)`
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
+	transition: ${myTheme.animations.transition};
 	&:hover, &.active {
 		color: ${myTheme.colors.accent};
 	}
@@ -34,23 +35,31 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 	z-index: 50;
 	overflow: auto;
 	background-color: #111214f6;
-	display: none;
-	
-	${props => props.isOpen && css<{ isOpen: boolean }>`
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		row-gap: 40px;
-		justify-content:center;
-		align-items: center;
-	`}
+	backdrop-filter: blur(3px);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	justify-content:center;
+	align-items: center;
+	transform: translateY(-100%);
+	transition: 1s ease-in-out;
 
 	ul {
 		display: flex;
-		gap: 40px;
+		gap: 10px;
 		flex-direction: column;
 		align-items: center;
+		transition: .6s ease-in-out;
 	}
+
+	${props => props.isOpen && css<{ isOpen: boolean }>`
+		transform: translateY(0);
+		row-gap: 40px;
+		& ul {
+			gap: 40px;
+		}
+	`}
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`

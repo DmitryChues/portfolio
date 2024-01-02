@@ -16,6 +16,7 @@ const Link = styled.a`
 	color: ${myTheme.colors.accent};
 	font-size: 0;
 	cursor: pointer;
+	transition: ${myTheme.animations.transition};
 	&:hover {
 		color: ${myTheme.colors.buttonHover};
 	}

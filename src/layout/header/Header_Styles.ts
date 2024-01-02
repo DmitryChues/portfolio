@@ -9,6 +9,7 @@ const LinkContact = styled.a`
 	text-transform: uppercase;
 	border-radius: 4px;
 	border: 1px solid ${myTheme.colors.accent};
+	transition: ${myTheme.animations.transition};
 	&:hover {
 		background-color: ${myTheme.colors.accent};
 		color: ${myTheme.colors.font.light};

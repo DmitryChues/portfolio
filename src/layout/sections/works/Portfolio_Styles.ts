@@ -46,6 +46,7 @@ const Button = styled.button<{ active?: boolean }>`
 	display: inline-block;
 	padding: 12px 16px;
 	border: 1px solid transparent;
+	transition: ${myTheme.animations.transition};
 	&:hover {
 		border: 1px solid ${myTheme.colors.accent};
 		color: ${myTheme.colors.accent};

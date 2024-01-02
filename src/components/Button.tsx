@@ -12,6 +12,7 @@ export const Button = styled.button`
 	line-height: normal;
 	text-transform: uppercase;
 	border: 1px solid ${myTheme.colors.accent};
+	transition: ${myTheme.animations.transition};
 	&:hover {
 		color: ${myTheme.colors.font.light};
 		background-color: ${myTheme.colors.buttonHover};

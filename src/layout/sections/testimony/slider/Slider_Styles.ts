@@ -16,6 +16,7 @@ const NavigationButton = styled.button`
 	height: 40px;
 	border-radius: 2px;
 	background-color: ${myTheme.colors.accent};
+	transition: ${myTheme.animations.transition};
 	&:hover {
 		background-color: ${myTheme.colors.buttonHover};
 	}
@@ -34,6 +35,7 @@ const Pag = styled.div`
 		height: 4px;
 		border-radius: 0;
 		background-color: ${myTheme.colors.accent};
+		transition: ${myTheme.animations.transition};
 	}
 `
 

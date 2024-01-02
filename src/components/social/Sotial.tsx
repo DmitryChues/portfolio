@@ -41,6 +41,7 @@ const Link = styled.a`
 	justify-content:center;align-items: center;
 	border-radius: 50%;
 	background-color: rgba(255, 255, 255, 0.20);
+	transition: ${myTheme.animations.transition};
 	&:hover {
 		background-color: ${myTheme.colors.accent};
 	}

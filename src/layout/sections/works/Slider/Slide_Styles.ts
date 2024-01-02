@@ -2,10 +2,17 @@ import styled from "styled-components"
 import { myTheme } from "../../../../styles/Theme.Styled"
 
 const WorkHover = styled.div`
-	display: none;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+	gap: 5px;
+	opacity: 0;
 	background-color: rgba(0, 0, 0, 0.59);
+	backdrop-filter: blur(2px);
 	color: ${myTheme.colors.font.light};
 	padding: 50px;
+	transition: ${myTheme.animations.transition};
 
 	position: absolute;
 	left: 0;
@@ -14,9 +21,9 @@ const WorkHover = styled.div`
 	bottom: 0;
 	@media ${myTheme.breakpoints.desktop} {
 		padding: 20px;
-		display: flex;
-		flex-direction: column;
 		position: relative;
+		align-items: start;
+		opacity: 1;
 		gap: 5px;
 		background-color: ${myTheme.colors.backGround.primaryBg};
 		color: ${myTheme.colors.font.medium};
@@ -30,11 +37,7 @@ const Slide = styled.div`
 	@media screen and (min-width: 1140px){
 		&:hover {
 			& ${WorkHover} {
-				display: flex;
-				flex-direction: column;
-				justify-content:center;
-				align-items: center;
-				gap: 5px;
+				opacity: 1;
 			}
 		}
 	}
@@ -66,6 +69,7 @@ const Link = styled.a`
 	padding: 16px 24px;
 	border-radius: 4px;
 	border: 1px solid ${myTheme.colors.font.light};
+	transition: ${myTheme.animations.transition};
 	
 	&:hover {
 		background-color: ${myTheme.colors.accent};
