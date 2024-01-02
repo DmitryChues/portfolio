@@ -25,6 +25,7 @@ const WorkHover = styled.div`
 		align-items: start;
 		opacity: 1;
 		gap: 5px;
+		backdrop-filter: none;
 		background-color: ${myTheme.colors.backGround.primaryBg};
 		color: ${myTheme.colors.font.medium};
 	}
