@@ -18,6 +18,7 @@ export const SliderReview: React.FC<{ textData: Array<reviewDataPropsType> }> = 
 	return (
 		<S.SliderContainerRewiew>
 			<Swiper
+				speed={500}
 				modules={[Navigation, Pagination, Controller]}
 				navigation={{
 					nextEl: '.testimony-button-next',

@@ -18,6 +18,7 @@ export const SliderPhoto: React.FC<{ photoData: Array<reviewDataPropsType> }> = 
 	return (
 		<S.SliderContainerPhoto>
 			<Swiper
+				speed={500}
 				modules={[Navigation, Pagination, Controller]}
 				navigation={{
 					nextEl: '.testimony-button-next',

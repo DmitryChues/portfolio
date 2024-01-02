@@ -15,6 +15,7 @@ type slideItemsType = {
 export const SliderPortfolio: React.FC<{ slideItems: Array<slideItemsType> }> = (props: { slideItems: Array<slideItemsType> }) => {
 	return (
 		<Swiper
+			speed={500}
 			modules={[Navigation, Pagination]}
 			navigation={{
 				nextEl: '.swiper-button-next',
