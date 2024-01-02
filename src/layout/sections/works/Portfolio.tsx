@@ -4,10 +4,12 @@ import { TabMenu, TabsStatusType, TabsItemsPropsType } from './tabMenu/TabMenu';
 import socialImage from '../../../assets/images/design-portfolio.png';
 import timerImage from '../../../assets/images/forSlidePortf.jpeg';
 import deskImage from '../../../assets/images/forSlidePortfolio.jpeg';
+import work from '../../../assets/images/work.jpg'
 import { NavigationButtons } from '../../../components/NavigationButtons';
 import { Container } from '../../../components/Container';
 import { SliderPortfolio } from './slider/SliderPortfolio';
 import { S } from './Portfolio_Styles';
+
 
 const tabsItems: Array<TabsItemsPropsType> = [
 	{
@@ -32,14 +34,14 @@ const slideWorkItems = [
 	{
 		title: 'Social',
 		description: 'Lorem, ipsum dolor.',
-		src: socialImage,
+		src: work,
 		type: 'react',
 	},
 	{
 		title: 'Timer',
 		description: 'Lorem, ipsum',
 		src: timerImage,
-		type: 'react',
+		type: 'spa',
 	},
 	{
 		title: 'Shop',
@@ -90,7 +92,9 @@ export const Portfolio: React.FC = () => {
 						currentFilterStatus={currentFilterStatus} />
 					<NavigationButtons></NavigationButtons>
 				</S.NavPortfolioWrapper>
+
 				<SliderPortfolio slideItems={filteredWorks} />
+
 			</Container>
 		</S.Portfolio >
 	);
