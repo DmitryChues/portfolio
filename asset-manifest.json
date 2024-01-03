@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.c4852ae5.css",
+    "main.js": "/portfolio/static/js/main.902c1d6b.js",
+    "static/js/787.6658d8b7.chunk.js": "/portfolio/static/js/787.6658d8b7.chunk.js",
+    "static/media/DSC_0468.jpeg": "/portfolio/static/media/DSC_0468.549cd0a390b3baefc89f.jpeg",
+    "static/media/myBgPhoto.png": "/portfolio/static/media/myBgPhoto.c176b62ef2e665e11d77.png",
+    "static/media/IMG_6434.webp": "/portfolio/static/media/IMG_6434.e8597202032446215341.webp",
+    "static/media/MQOdUPQHpzk.jpg": "/portfolio/static/media/MQOdUPQHpzk.32d90508f60f59ba3d86.jpg",
+    "static/media/work.jpg": "/portfolio/static/media/work.efcdfcb4bd0a7fcc947d.jpg",
+    "static/media/mainBg.jpg": "/portfolio/static/media/mainBg.1fd33d6dd1f08c30e614.jpg",
+    "static/media/review.jpg": "/portfolio/static/media/review.aaa7469e709daf9a23e9.jpg",
+    "static/media/design-portfolio.png": "/portfolio/static/media/design-portfolio.3e3fbb43bf333c0ad4a3.png",
+    "static/media/forSlidePortf.jpeg": "/portfolio/static/media/forSlidePortf.e6efc939111c1454084f.jpeg",
+    "static/media/forSlidePortfolio.jpeg": "/portfolio/static/media/forSlidePortfolio.0218b42e5a56389047c9.jpeg",
+    "static/media/sprite.svg": "/portfolio/static/media/sprite.82ec712f84cd5933c833f1d18a22c4f4.svg",
+    "static/media/bgSecondary.png": "/portfolio/static/media/bgSecondary.530788b3a4e5522bdf58.png",
+    "static/media/contactBg.png": "/portfolio/static/media/contactBg.659c71c3038f71c3f64e.png",
+    "index.html": "/portfolio/index.html",
+    "main.c4852ae5.css.map": "/portfolio/static/css/main.c4852ae5.css.map",
+    "main.902c1d6b.js.map": "/portfolio/static/js/main.902c1d6b.js.map",
+    "787.6658d8b7.chunk.js.map": "/portfolio/static/js/787.6658d8b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4852ae5.css",
+    "static/js/main.902c1d6b.js"
+  ]
+}
