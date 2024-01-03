@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Icon } from '../../../../components/icon/Icon';
-import { useCollapse } from 'react-collapsed'
 import { S } from './MobileSkill_Styles';
 
 type SkillPropsType = {
@@ -8,22 +7,26 @@ type SkillPropsType = {
 	viewBox: string;
 	title: string;
 	description: string;
+	setSkillisOpen: (title: string) => void
+	isOpen: boolean;
 }
 
-export const MobileSkill = (props: SkillPropsType) => {
-	const config = {
-		duration: 300,
-	}
-	const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(config)
 
+export const MobileSkill = (props: SkillPropsType) => {
 	return (
 		<>
-			<S.StyledMobileSkill isOpen={isExpanded} {...getToggleProps()}>
-				<Icon width='40' height='40' iconId={props.iconId} viewBox={props.viewBox} />
-				<S.SkillTitle isOpen={isExpanded} >{props.title}</S.SkillTitle>
+			<S.StyledMobileSkill onClick={() => props.setSkillisOpen(props.title)} isOpen={props.isOpen} >
+				<S.IconTitleWrapper>
+					<Icon width='40' height='40' iconId={props.iconId} viewBox={props.viewBox} />
 
+					<S.SkillTitle isOpen={props.isOpen} >{props.title}</S.SkillTitle>
+				</S.IconTitleWrapper>
 			</S.StyledMobileSkill>
-			<S.SkillMobileTextPopup {...getCollapseProps()}><p>{props.description}</p></S.SkillMobileTextPopup>
+			<S.SkillMobileTextPopup isOpen={props.isOpen}>
+				<p>{props.description}</p>
+				<S.CloseButton onClick={() => props.setSkillisOpen('close')}>
+				</S.CloseButton>
+			</S.SkillMobileTextPopup>
 		</>
 	)
 };

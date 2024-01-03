@@ -54,7 +54,7 @@ const skillsData = [
 
 
 export const Skills = () => {
-	const [width, setWidth] = React.useState(window.innerWidth);
+	const [width, setWidth] = useState(window.innerWidth);
 	const breakpoint = 575.98;
 
 	React.useEffect(() => {
@@ -65,6 +65,10 @@ export const Skills = () => {
 		return () => window.removeEventListener("resize", handleWindowResize);
 	}, []);
 
+	const [skillIsOpen, setSkillIsOpen] = useState('')
+	const isOpenHendler = (title: string) => {
+		setSkillIsOpen(title)
+	}
 	return (
 		<S.Skills id='skills'>
 			<Container>
@@ -74,7 +78,15 @@ export const Skills = () => {
 					{width < breakpoint ?
 						skillsData.map((s, index) => {
 							return (
-								<MobileSkill key={index} iconId={s.iconId} title={s.title} description={s.description} viewBox={s.viewBox} />
+								<MobileSkill
+									key={index}
+									iconId={s.iconId}
+									title={s.title}
+									description={s.description}
+									viewBox={s.viewBox}
+									setSkillisOpen={isOpenHendler}
+									isOpen={s.title === skillIsOpen}
+								/>
 							)
 						})
 						: <Fade cascade damping={0.2}>
