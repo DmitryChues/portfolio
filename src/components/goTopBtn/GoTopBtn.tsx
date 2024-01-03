@@ -40,7 +40,11 @@ const StyledGoTopBtn = styled.button`
 	bottom: 30px;
 	border-radius: 2px;
 	opacity: 0.2;
+	z-index: 999;
 	&:hover {
 		opacity: 0.7;
+	}
+	@media ${myTheme.breakpoints.tablet} {
+		display: none;
 	}
 `
